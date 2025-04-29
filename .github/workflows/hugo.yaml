@@ -29,5 +29,5 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./public # This is the directory Hugo outputs to
-          publish_branch: master # Change this to main if your GitHub Pages serves from 'main' branch root
+          publish_branch: main # Change this to main if your GitHub Pages serves from 'main' branch root
           # cname: your-custom-domain.com # Uncomment and replace if you use a custom domain
