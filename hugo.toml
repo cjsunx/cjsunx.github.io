@@ -1,0 +1,26 @@
+baseURL = 'https://cjsunx.github.io/'
+languageCode = 'en-us'
+title = 'CJ Sun'
+theme = "hugo-theme-console"
+contentDir = "content"
+
+[params]
+  # Cutting off the page title to two chars for mobile (console-demo -> co)
+  titleCutting = true
+
+  # Set the animation style -- https://animate.style/
+  # To disable animations, please remove or comment animationStyle parameter
+  animateStyle = "animated zoomIn fast" 
+
+  [[params.navlinks]]
+  name = "linkedin/"
+  url = "https://www.linkedin.com/in/christopherjamessun/"
+
+  [[params.navlinks]]
+  name = "x/"
+  url = "https://x.com/cjsunx/"
+  target = "_blank"
+
+  [caches]
+  [caches.images]
+    dir = ':cacheDir/images'
