@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on CJ Sun</title>
-    <link>https://cjsunx.github.io/posts/</link>
+    <link>https://cjsun.co/posts/</link>
     <description>Recent content in Posts on CJ Sun</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 27 Apr 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://cjsunx.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://cjsun.co/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Learning to code</title>
-      <link>https://cjsunx.github.io/posts/introduction/</link>
+      <link>https://cjsun.co/posts/introduction/</link>
       <pubDate>Sun, 27 Apr 2025 00:00:00 +0000</pubDate>
-      <guid>https://cjsunx.github.io/posts/introduction/</guid>
+      <guid>https://cjsun.co/posts/introduction/</guid>
       <description>&lt;p&gt;Learning to code and build a static website with Hugo.&lt;/p&gt;</description>
     </item>
   </channel>
