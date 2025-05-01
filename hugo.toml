@@ -1,4 +1,4 @@
-baseURL = 'https://cjsun.co/'
+baseURL = 'https://www.cjsun.co/'
 languageCode = 'en-us'
 title = 'CJ Sun'
 theme = "hugo-theme-console"
