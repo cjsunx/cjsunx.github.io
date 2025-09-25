@@ -56,5 +56,14 @@
         {{ end }}
         {{ partial "footer.html" . }}
     </div>
+    <script>
+  // Default = dark (your theme’s baseline)
+  document.body.dataset.theme = "dark";
+
+  function toggleTheme() {
+    const body = document.body;
+    body.dataset.theme = body.dataset.theme === "light" ? "dark" : "light";
+  }
+</script>
   </body>
 </html>
