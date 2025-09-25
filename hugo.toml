@@ -13,6 +13,10 @@ contentDir = "content"
   animateStyle = "animated zoomIn fast" 
 
   [[params.navlinks]]
+  name = "posts/"
+  url = "posts/"
+
+  [[params.navlinks]]
   name = "linkedin/"
   url = "https://www.linkedin.com/in/christopherjamessun/"
 
