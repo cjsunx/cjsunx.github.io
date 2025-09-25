@@ -85,5 +85,15 @@
             });
         }
     </script>
+    // Attach the toggle function to the theme link
+    document.addEventListener('DOMContentLoaded', () => {
+    const themeLink = document.querySelector('a[href="#"][rel="noopener noreferrer"]');
+    if (themeLink) {
+    themeLink.addEventListener('click', function(event) {
+    event.preventDefault(); // Stop the link from jumping
+    toggleTheme();
+    });
+    }
+    });
 </body>
 </html>
