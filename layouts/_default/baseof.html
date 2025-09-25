@@ -31,39 +31,59 @@
 <body class="terminal">
     <div class="container">
         <div class="terminal-nav">
-          <header class="terminal-logo">
-            <div class="logo terminal-prompt">
-              {{ $url := replace .Permalink ( printf "%s" .Site.BaseURL) "" }}
-              {{ $.Scratch.Add "path" .Site.BaseURL }}
-              <a href="{{ .Site.BaseURL }}" class="no-style {{ with .Site.Params.TitleCutting }}site-name{{ end }}">{{ .Site.Title }}</a>:~# 
-              {{ range $index, $element := split $url "/" }}{{ $.Scratch.Add "path" $element }}{{ if ne $element "" }}<a href='{{ $.Scratch.Get "path" | absURL }}'>{{ . }}</a>/{{ $.Scratch.Add "path" "/" }}{{ end }}{{ end }}</div></header>
-          <nav class="terminal-menu">
-            <ul vocab="https://schema.org/" typeof="BreadcrumbList">
-                {{ range $index, $element := .Site.Params.navlinks }}
-                <li property="itemListElement" typeof="ListItem">
-                    <a property="item" typeof="WebPage" href="{{ absURL .url }}">
-                    <span property="name">{{ .name }}</span></a>
-                    <meta property="position" content="{{ add $index 1}}" />
-                </li>
-                {{ end }}
-            </ul>
-          </nav>
+            <header class="terminal-logo">
+                <div class="logo terminal-prompt">
+                    {{ $url := replace .Permalink ( printf "%s" .Site.BaseURL) "" }}
+                    {{ $.Scratch.Add "path" .Site.BaseURL }}
+                    <a href="{{ .Site.BaseURL }}" class="no-style {{ with .Site.Params.TitleCutting }}site-name{{ end }}">{{ .Site.Title }}</a>:~#
+                    {{ range $index, $element := split $url "/" }}{{ $.Scratch.Add "path" $element }}{{ if ne $element "" }}<a href='{{ $.Scratch.Get "path" | absURL }}'>{{ . }}</a>/{{ $.Scratch.Add "path" "/" }}{{ end }}{{ end }}
+                </div>
+            </header>
+            <nav class="terminal-menu">
+                <ul vocab="https://schema.org/" typeof="BreadcrumbList">
+                    {{ range $index, $element := .Site.Params.navlinks }}
+                    <li property="itemListElement" typeof="ListItem">
+                        <a property="item" typeof="WebPage" href="{{ absURL .url }}">
+                            <span property="name">{{ .name }}</span>
+                        </a>
+                        <meta property="position" content="{{ add $index 1}}" />
+                    </li>
+                    {{ end }}
+                </ul>
+            </nav>
         </div>
     </div>
 
-    <div class="container {{ .Site.Params.animateStyle }}" >
+    <div class="container {{ .Site.Params.animateStyle }}">
         {{ block "main" . }}
         {{ end }}
         {{ partial "footer.html" . }}
     </div>
-    <script>
-  // Default = dark (your theme’s baseline)
-  document.body.dataset.theme = "dark";
+    {{ partial "footer.html" . }}
 
-  function toggleTheme() {
-    const body = document.body;
-    body.dataset.theme = body.dataset.theme === "light" ? "dark" : "light";
-  }
-</script>
-  </body>
+    <script>
+        function toggleTheme() {
+            const body = document.body;
+            const currentTheme = body.dataset.theme;
+            const newTheme = currentTheme === "light" ? "dark" : "light";
+            body.dataset.theme = newTheme;
+            localStorage.setItem("theme", newTheme); // Save the preference
+        }
+
+        // On page load, check for a saved theme and apply it
+        const savedTheme = localStorage.getItem("theme");
+        if (savedTheme) {
+            document.body.dataset.theme = savedTheme;
+        }
+
+        // Attach the toggle function to the button click
+        const themeToggle = document.getElementById("theme-toggle");
+        if (themeToggle) {
+            themeToggle.addEventListener("click", function (event) {
+                event.preventDefault(); // Prevent the link from jumping
+                toggleTheme();
+            });
+        }
+    </script>
+</body>
 </html>
