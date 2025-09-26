@@ -49,6 +49,7 @@
                         <meta property="position" content="{{ add $index 1}}" />
                     </li>
                     {{ end }}
+                    <li><a href="#" id="theme-toggle">Theme</a></li>
                 </ul>
             </nav>
         </div>
@@ -61,12 +62,28 @@
     </div>
     
     <script>
-        // Attach the toggle function to the theme link
+        // Function to toggle the theme
+        function toggleTheme() {
+            const body = document.body;
+            const currentTheme = body.dataset.theme;
+            const newTheme = currentTheme === "light" ? "dark" : "light";
+            body.dataset.theme = newTheme;
+            localStorage.setItem("theme", newTheme);
+        }
+
+        // Check for saved theme on page load and apply it
         document.addEventListener('DOMContentLoaded', () => {
-            const themeLink = document.querySelector('a[href="#"]');
-            if (themeLink) {
-                themeLink.addEventListener('click', function (event) {
-                    event.preventDefault(); // Stop the link from jumping
+            const savedTheme = localStorage.getItem("theme");
+            const themeToggle = document.getElementById("theme-toggle");
+
+            if (savedTheme) {
+                document.body.dataset.theme = savedTheme;
+            }
+
+            // Attach the toggle function to the button click
+            if (themeToggle) {
+                themeToggle.addEventListener("click", function (event) {
+                    event.preventDefault();
                     toggleTheme();
                 });
             }
