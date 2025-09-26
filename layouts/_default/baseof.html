@@ -61,21 +61,6 @@
     </div>
     
     <script>
-        function toggleTheme() {
-            const body = document.body;
-            const currentTheme = body.dataset.theme;
-            const newTheme = currentTheme === "light" ? "dark" : "light";
-            body.dataset.theme = newTheme;
-            localStorage.setItem("theme", newTheme); // Save the preference
-        }
-
-        // On page load, check for a saved theme and apply it
-        const savedTheme = localStorage.getItem("theme");
-        if (savedTheme) {
-            document.body.dataset.theme = savedTheme;
-        }
-
-      <script>
         // Attach the toggle function to the theme link
         document.addEventListener('DOMContentLoaded', () => {
             const themeLink = document.querySelector('a[href="#"]');
