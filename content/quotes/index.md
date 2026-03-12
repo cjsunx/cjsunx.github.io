@@ -4,7 +4,11 @@ date: 2026-03-11
 draft: false
 ---
 
-"If you're not progressing, you're regressing. So keep moving forward."
+"Escape competition through authenticity." - Naval Ravikant
+
+"A rational person can find peace by cultivating indifference to things outside of their control." - Naval Ravikant
+
+"If you're not progressing, you're regressing. So keep moving forward." - Unknown
 
 "If you aren't sick of saying it, they haven't heard you." - Jeff Weiner
 
