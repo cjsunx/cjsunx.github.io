@@ -10,13 +10,13 @@ draft: false
 
 "Musicians play their instruments. I play the orchestra." - Steve Jobs
 
-"Focusing is about saying no." – Steve Jobs
+"Focusing is about saying no." - Steve Jobs
 
-"Change breaks the brittle." – Jan Houtema
+"Change breaks the brittle."" - Jan Houtema
 
-"Don't fear moving slowly. Fear standing still." – Chinese proverb
+"Don't fear moving slowly. Fear standing still." - Chinese proverb
 
-"I have never seen ordinary effort lead to extraordinary results." – Alexandr Wang
+"I have never seen ordinary effort lead to extraordinary results." - Alexandr Wang
 
 "I fear not the man who has practiced 10,000 kicks once, but I fear the man who has practiced one kick 10,000 times." - Bruce Lee
 
