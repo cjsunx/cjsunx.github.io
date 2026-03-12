@@ -13,6 +13,10 @@ contentDir = "content"
   animateStyle = "animated zoomIn fast" 
 
   [[params.navlinks]]
+  name = "quotes/"
+  url = "quotes/"
+
+  [[params.navlinks]]
   name = "posts/"
   url = "posts/"
 
