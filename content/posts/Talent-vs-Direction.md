@@ -4,11 +4,15 @@ draft = false
 title = 'Talent vs Direction'
 +++
 
-"The output of any company is the vector sum of the people within it." - Elon Musk
+*"The output of any company is the vector sum of the people within it." - Elon Musk**
+
+----
 
 In physics and mathematics, a vector is a quantity that has both magnitude (how much) and direction (where it's going).
 
 When applied to a company or team, the "vector sum" is a metaphor for how individual efforts combine to create a final result. If everyone is pulling in different directions, the company or team's total output will be much smaller than the sum of its parts.
+
+----
 
 **The Breakdown of the Metaphor**
 
@@ -25,6 +29,8 @@ In a vector sum, you don't just add the lengths of the lines; you connect them h
 - **Opposition:** If two people work in opposite directions, they cancel each other out (1 - 1 = 0).
 
 Even though both are working hard, the company or team's net progress is zero.
+
+----
 
 **Why This Matters in Business**
 
