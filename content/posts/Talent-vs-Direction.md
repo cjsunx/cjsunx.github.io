@@ -20,14 +20,16 @@ This represents where that effort is being applied. Is the person working toward
 
 **3. The Summation**
 In a vector sum, you don't just add the lengths of the lines; you connect them head-to-tail.
-- Perfect Alignment: If two people work in the exact same direction, their vectors add up perfectly (1 + 1 = 2).
-- Misalignment: If two people work at a 90 degree angle to each other, their combined progress is less than the sum of their individual efforts (1 + 1 = 1.41).
-- Opposition: If two people work in opposite directions, they cancel each other out (1 - 1 = 0).
+- **Perfect Alignment:** If two people work in the exact same direction, their vectors add up perfectly (1 + 1 = 2).
+- **Misalignment:** If two people work at a 90 degree angle to each other, their combined progress is less than the sum of their individual efforts (1 + 1 = 1.41).
+- **Opposition:** If two people work in opposite directions, they cancel each other out (1 - 1 = 0).
 
 Even though both are working hard, the company or team's net progress is zero.
 
 **Why This Matters in Business**
 
 **High Talent, Low Alignment:** Lots of energy is spent, but the company or team feels "stuck" or moves in circles.  
+
 **Medium Talent, High Alignment:** The company or team moves steadily and predictably toward its goals.  
+
 **High Talent, High Alignment:** The company or team achieves exponential growth and "breakout" success.  
