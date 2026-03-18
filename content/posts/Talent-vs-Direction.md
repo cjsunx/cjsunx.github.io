@@ -8,7 +8,7 @@ title = 'Talent vs Direction'
 
 In physics and mathematics, a vector is a quantity that has both magnitude (how much) and direction (where it's going).
 
-When applied to a company or team, the "vector sum" is a metaphor for how individual efforts combine to create a final result. If everyone is pulling in different directions, the company or team’s total output will be much smaller than the sum of its parts.
+When applied to a company or team, the "vector sum" is a metaphor for how individual efforts combine to create a final result. If everyone is pulling in different directions, the company or team's total output will be much smaller than the sum of its parts.
 
 **The Breakdown of the Metaphor**
 
