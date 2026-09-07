@@ -17,6 +17,10 @@ contentDir = "content"
   url = "quotes/"
 
   [[params.navlinks]]
+  name = "portfolio/"
+  url = "portfolio/"
+
+  [[params.navlinks]]
   name = "posts/"
   url = "posts/"
 
