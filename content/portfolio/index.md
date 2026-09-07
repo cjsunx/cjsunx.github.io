@@ -43,7 +43,7 @@ companies:
   - name: "beehiiv"
     url: "https://beehiiv.com/"
     logo: "/portfolio/logos/beehiiv.png"
-    plate: "light"
+    plate: "dark"
   - name: "Neurophos"
     url: "https://neurophos.com/"
     logo: "/portfolio/logos/neurophos.svg"
