@@ -22,7 +22,7 @@ companies:
     plate: "dark"
   - name: "Extropic"
     url: "https://extropic.com/"
-    logo: "/portfolio/logos/extropic.webp"
+    logo: "/portfolio/logos/extropic.png"
     plate: "light"
   - name: "Armada"
     url: "https://www.armada.ai/"
