@@ -8,25 +8,18 @@
   margin-top: 1rem;
 }
 @media (min-width: 720px) {
-  .portfolio-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
+  .portfolio-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }
 @media (min-width: 1100px) {
-  .portfolio-grid {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-  }
+  .portfolio-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
 }
 .portfolio-item {
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 0.65rem;
-  min-height: 110px;
-  padding: 1.1rem 0.9rem 0.9rem;
+  min-height: 100px;
+  padding: 1.25rem 1rem;
   text-decoration: none;
-  color: inherit;
   border: 1px solid color-mix(in srgb, var(--font-color, #ccc) 18%, transparent);
   border-radius: 6px;
   transition: border-color 0.15s ease, background 0.15s ease;
@@ -37,24 +30,16 @@
 }
 .portfolio-item img {
   max-width: 100%;
-  max-height: 52px;
+  max-height: 56px;
   width: auto;
   height: auto;
   object-fit: contain;
-}
-.portfolio-item .portfolio-name {
-  font-size: 0.85rem;
-  line-height: 1.2;
-  text-align: center;
-  opacity: 0.9;
 }
 </style>
 <div class="portfolio-grid">
 {{ range .Params.companies }}
   <a class="portfolio-item" href="{{ .url }}" target="_blank" rel="noopener noreferrer" title="{{ .name }}">
-    <img src="{{ .logo }}" alt="{{ .name }}" loading="lazy"
-         onerror="this.style.display='none'">
-    <span class="portfolio-name">{{ .name }}</span>
+    <img src="{{ .logo }}" alt="{{ .name }}" loading="lazy">
   </a>
 {{ end }}
 </div>
