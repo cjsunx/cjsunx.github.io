@@ -11,8 +11,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 72px;
-  padding: 0.75rem;
+  height: 88px;
+  padding: 1rem;
   text-decoration: none;
   border: 1px solid color-mix(in srgb, var(--font-color, #ccc) 18%, transparent);
   border-radius: 6px;
@@ -24,15 +24,10 @@
 }
 .portfolio-logo img {
   max-width: 100%;
-  max-height: 40px;
+  max-height: 48px;
   width: auto;
   height: auto;
   object-fit: contain;
-  filter: grayscale(1) contrast(1.1);
-}
-[data-theme="dark"] .portfolio-logo img,
-body:not([data-theme="light"]) .portfolio-logo img {
-  filter: grayscale(1) brightness(0) invert(1);
 }
 .portfolio-logo-fallback {
   font-size: 0.75rem;
@@ -44,7 +39,7 @@ body:not([data-theme="light"]) .portfolio-logo img {
 <div class="portfolio-grid">
 {{ range .Params.companies }}
   <a class="portfolio-logo" href="{{ .url }}" target="_blank" rel="noopener noreferrer" title="{{ .name }}">
-    <img src="https://logo.clearbit.com/{{ .domain }}" alt="{{ .name }}" loading="lazy"
+    <img src="{{ .logo }}" alt="{{ .name }}" loading="lazy"
          onerror="this.style.display='none'; this.parentNode.querySelector('.portfolio-logo-fallback').style.display='flex'">
     <span class="portfolio-logo-fallback" style="display:none">{{ .name }}</span>
   </a>
