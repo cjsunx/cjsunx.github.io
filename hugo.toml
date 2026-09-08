@@ -8,6 +8,9 @@ contentDir = "content"
   # Cutting off the page title to two chars for mobile (console-demo -> co)
   titleCutting = false
 
+  # Site / OG description (career positioning)
+  description = "Head of Business @ Google · AI GTM · Angel Investor (Physical AI / Neocloud / Aerospace)"
+
   # Set the animation style -- https://animate.style/
   # To disable animations, please remove or comment animationStyle parameter
   animateStyle = "animated zoomIn fast" 
