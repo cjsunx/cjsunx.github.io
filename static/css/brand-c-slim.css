@@ -1,0 +1,34 @@
+/* Option C slim (CJ 2026-09-20): CTA box, header rules + size/color, blue headline only */
+
+body.terminal h1 {
+  font-size: clamp(1.75rem, 2.4vw, 2.15rem);
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+/* Blue headline under the name */
+body.terminal .container > h1 + p {
+  color: var(--primary-color, #62c4ff);
+  font-size: 1.02rem;
+}
+
+/* Section headers: larger, colored, line underneath */
+body.terminal h2 {
+  font-size: 1.15rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--secondary-color, #a3abba);
+  border-bottom: 1px solid color-mix(in srgb, var(--font-color, #e8e9ed) 18%, transparent);
+  padding-bottom: 0.4rem;
+  margin-top: 2.25rem;
+  margin-bottom: 1rem;
+}
+
+/* Contact box around the email / LinkedIn line */
+body.terminal p:has(> a[href^="mailto:"]) {
+  border: 1px solid color-mix(in srgb, var(--font-color, #e8e9ed) 18%, transparent);
+  background: color-mix(in srgb, var(--font-color, #fff) 4%, transparent);
+  border-radius: 6px;
+  padding: 0.85rem 1rem;
+  margin: 1rem 0 1.25rem;
+}
