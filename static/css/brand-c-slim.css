@@ -1,10 +1,5 @@
-/* Option C slim (CJ 2026-09-20): CTA box, header rules + size/color, blue headline only */
-
-body.terminal h1 {
-  font-size: clamp(1.75rem, 2.4vw, 2.15rem);
-  letter-spacing: -0.02em;
-  line-height: 1.2;
-}
+/* Option C slim — CTA box, section header rules + color, blue headline.
+   H1 name stays at theme default (oversized H1 looked off). */
 
 /* Blue headline under the name */
 body.terminal .container > h1 + p {
