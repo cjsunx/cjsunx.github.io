@@ -1,11 +1,16 @@
 {{ define "main" }}
+<h1>CJ Sun</h1>
 <p>
     Head of Business @ Google · AI GTM · Angel Investor (Physical AI / Neocloud / Aerospace)
 </p>
-<h1>About</h1>
+
+<h2>About</h2>
 
 <p>
     Scaled AI GTM operator and angel investor. 16 years in sales leadership; 9 at Google building and leading teams that grew LA mid-market from 8 → 300 people and ~$100M → $4B ARR. Currently Head of Business for an $850M+ ARR unit — player-coach selling into CXO rooms, complex multi-year deals, and AI product GTM.
+</p>
+<p>
+    For senior GTM / commercial leadership conversations (Physical AI, neocloud, AI infra, frontier labs): <a href="mailto:cj@cjsun.co">cj@cjsun.co</a> · <a href="https://www.linkedin.com/in/christopherjamessun">LinkedIn</a>
 </p>
 <p>
     Angel book concentrated in physical AI / robotics, AI infra &amp; compute, aerospace / dual-use, and vertical software with real retention. Thesis: <a href="https://cjsun.co/posts/where-the-atoms-still-matter/">Where the atoms still matter</a>. Based in Los Angeles.
@@ -13,12 +18,9 @@
 <p>
     Ex-rank #1 Starcraft 2 player. Active rank top 3% Warcraft 3 player.
 </p>
-<p>
-    For senior GTM / commercial leadership conversations (Physical AI, neocloud, AI infra, frontier labs): <a href="mailto:cj@cjsun.co">cj@cjsun.co</a> · <a href="https://www.linkedin.com/in/christopherjamessun">LinkedIn</a>
-</p>
 <br />
 
-<h1>Investing</h1>
+<h2>Investing</h2>
 
 <p>Past investments include:</p>
 <ul>
@@ -31,7 +33,7 @@
 
 <div class="experience-section">
 
-    <h1>Career</h1>
+    <h2>Career</h2>
 
     <h3>Google (2017-Present)</h3>
     <p>Progression: Head of Business → Sr. Manager → Manager → Sr. AE → Sr. Account Strategist</p>
@@ -46,15 +48,13 @@
 
     <h4>Senior Manager, Mid-Market Sales (2022-2024)</h4>
     <ul>
-        <li>Front-line GTM for a $300M+ book; consistently 100%+ quota while scaling AI solution selling into CXO rooms.</li>
-        <li>Led Mid-Market US performance management for 300+ people; Changemaker Manager of the Quarter.</li>
-        <li>Partnered with Product / StratOps on initiatives unlocking $1B+ incremental customer revenue; shipped a GTM motion for a $67M+ opportunity.</li>
+        <li>Front-line GTM for a $300M+ book; 100%+ quota while scaling AI selling into CXO rooms; led Mid-Market US performance for 300+ people (Changemaker Manager of the Quarter).</li>
+        <li>Partnered with Product / StratOps on $1B+ incremental customer revenue; shipped a GTM motion for a $67M+ opportunity.</li>
     </ul>
 
     <h4>Sr. Account Executive / Sr. Account Strategist (2017-2020)</h4>
     <ul>
-        <li>Grew a 60-account portfolio from $80M → $180M ARR (45–55% y/y); average 100%+ attainment.</li>
-        <li>Top 1% performance; 2x Sales Excellence (Best Customer Success); Platinum Award for a $21M upfront (2nd-largest in org history).</li>
+        <li>Grew a 60-account portfolio from $80M → $180M ARR (45–55% y/y); top 1% performance; 2x Sales Excellence; Platinum Award for a $21M upfront (2nd-largest in org history).</li>
         <li>Built a net-new pod for 5 consecutive quarters; helped customers scale to $10M+ ARR.</li>
     </ul>
 
@@ -67,7 +67,7 @@
 
 </div>
 
-<h1>Latest posts</h1>
+<h2>Latest posts</h2>
 
 <div class="posts-list">
     {{ with .Site.GetPage "/posts" }}
@@ -75,7 +75,7 @@
     <div class="post">
         <p>
             <div class="date">{{ .PublishDate.Format "Jan. 2, 2006" }}</div>
-            <h1><a href="{{ .Permalink }}" title="{{ .Title }}">{{ .Title }}</a></h1>
+            <h3><a href="{{ .Permalink }}" title="{{ .Title }}">{{ .Title }}</a></h3>
             {{ .Summary }}
         </p>
     </div>
