@@ -1,8 +1,8 @@
-/* Option C slim — CTA box, section header rules + color, blue headline.
-   H1 name stays at theme default (oversized H1 looked off). */
+/* Option C slim — CTA box, section header rules + color, blue tagline.
+   Page H1 name removed; site name lives in the top-left prompt only. */
 
-/* Blue headline under the name */
-body.terminal .container > h1 + p {
+/* Blue tagline at top of page */
+body.terminal .tagline {
   color: var(--primary-color, #62c4ff);
   font-size: 1.02rem;
 }
