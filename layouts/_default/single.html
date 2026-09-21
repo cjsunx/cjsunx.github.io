@@ -1,4 +1,7 @@
 {{ define "main" }}
-<h1>{{ .Title }}</h1>
-{{ .Content }}
+<article class="post-page">
+  <h1 class="post-h1">{{ .Title }}</h1>
+  {{ if not .Date.IsZero }}<div class="post-meta">{{ .Date.Format "January 2, 2006" }}</div>{{ end }}
+  <div class="post-body">{{ .Content }}</div>
+</article>
 {{ end }}

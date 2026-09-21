@@ -1,0 +1,62 @@
+{{ define "main" }}
+{{ $quotes := .Params.quotes }}
+
+<header class="page-hero">
+  <div class="eyebrow">Quotes</div>
+  <h1 class="page-title">Lines worth keeping. <span class="accent">One at random, every load.</span></h1>
+  <p class="lede">
+    Operating principles and provocations collected over 16 years of selling, building, and writing checks.
+  </p>
+</header>
+
+<div class="fortune" role="complementary" aria-label="Random quote">
+  <div class="prompt">$ fortune<span class="cursor"></span></div>
+  <div class="fade">
+    <p class="quote-text" id="qText"></p>
+    <p class="quote-author" id="qAuthor"></p>
+  </div>
+  <div class="actions">
+    <span class="counter" id="qCounter"></span>
+    <button class="shuffle-btn" id="shuffleBtn">next →</button>
+  </div>
+</div>
+
+<section id="all">
+  <div class="eyebrow">The Collection</div>
+  <h2 class="section-title">All of them, for the completionists.</h2>
+  <ul class="all-quotes" id="allQuotes">
+    {{ range $quotes }}
+    <li><span class="q-text">"{{ .t }}"</span><span class="q-author">{{ .a }}</span></li>
+    {{ end }}
+  </ul>
+</section>
+
+<script>
+  (function () {
+    var quotes = {{ $quotes | jsonify | safeJS }};
+    var qText = document.getElementById('qText');
+    var qAuthor = document.getElementById('qAuthor');
+    var qCounter = document.getElementById('qCounter');
+    var fade = document.querySelector('.fortune .fade');
+    var current = -1;
+
+    function pad(n) { return String(n).padStart(2, '0'); }
+
+    function showQuote() {
+      var i;
+      do { i = Math.floor(Math.random() * quotes.length); } while (i === current && quotes.length > 1);
+      current = i;
+      fade.classList.add('fading');
+      setTimeout(function () {
+        qText.innerHTML = '<span class="mark">></span>' + quotes[i].t;
+        qAuthor.textContent = '— ' + quotes[i].a;
+        qCounter.textContent = pad(i + 1) + ' / ' + pad(quotes.length);
+        fade.classList.remove('fading');
+      }, 250);
+    }
+
+    document.getElementById('shuffleBtn').addEventListener('click', showQuote);
+    showQuote();
+  })();
+</script>
+{{ end }}
