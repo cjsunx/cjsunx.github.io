@@ -1,4 +1,7 @@
 {{ define "main" }}
-<h1>Page not found</h1>
-<p><a href="{{ .Site.BaseURL }}">Return to the home page</a>.</p>
+<div class="page-hero" style="text-align:center; padding: 4rem 0;">
+  <div class="eyebrow">404</div>
+  <h1 class="page-title">Page not found.</h1>
+  <p class="lede">The atoms moved. <a href="{{ "" | relURL }}">Back home →</a></p>
+</div>
 {{ end }}

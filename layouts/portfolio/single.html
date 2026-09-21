@@ -1,49 +1,101 @@
 {{ define "main" }}
-<style>
-.portfolio-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1.25rem;
-  align-items: stretch;
-  margin-top: 1rem;
-}
-@media (min-width: 720px) {
-  .portfolio-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-}
-@media (min-width: 1100px) {
-  .portfolio-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
-}
-.portfolio-item {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 100px;
-  padding: 1.25rem 1rem;
-  text-decoration: none;
-  border-radius: 6px;
-  /* Cohesive black plates for every logo */
-  background: #0a0a0a;
-  border: 1px solid #2a2a2a;
-  color: #f5f5f5;
-  transition: border-color 0.15s ease, box-shadow 0.15s ease;
-}
-.portfolio-item:hover {
-  border-color: var(--primary-color, #1a95e0);
-  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--primary-color, #1a95e0) 35%, transparent);
-}
-.portfolio-item img {
-  max-width: 100%;
-  max-height: 56px;
-  width: auto;
-  height: auto;
-  object-fit: contain;
-}
-</style>
-<div class="portfolio-grid">
-{{ range .Params.companies }}
-  <a class="portfolio-item" href="{{ .url }}" target="_blank" rel="noopener noreferrer" title="{{ .name }}">
-    <img src="{{ .logo }}" alt="{{ .name }}" loading="lazy">
-  </a>
-{{ end }}
+{{ $groups := .Params.groups }}
+
+<header class="page-hero">
+  <div class="eyebrow">Portfolio</div>
+  <h1 class="page-title">100+ checks. <span class="accent">Where the atoms still matter.</span></h1>
+  <p class="lede">
+    Angel book concentrated where compute meets the physical world: AI infra, physical AI, aerospace and dual-use, and vertical software with real retention. A partial list — selected companies public or with permission to disclose.
+  </p>
+
+  <div class="kpis">
+    <div class="kpi">
+      <div class="val">100<span class="unit">+</span></div>
+      <div class="lbl">Investments</div>
+    </div>
+    <div class="kpi">
+      <div class="val">2024</div>
+      <div class="lbl">First check</div>
+    </div>
+    <div class="kpi">
+      <div class="val">04</div>
+      <div class="lbl">Core theses</div>
+    </div>
+    <div class="kpi">
+      <div class="val">LA</div>
+      <div class="lbl">Based</div>
+    </div>
+  </div>
+</header>
+
+{{ $total := 0 }}{{ range $groups }}{{ $total = add $total (len .companies) }}{{ end }}
+<div class="filters" id="filters">
+  <button class="chip active" data-filter="all">All <span class="n">{{ printf "%02d" $total }}</span></button>
+  {{ range $groups }}
+  <button class="chip" data-filter="{{ .tag }}">{{ .name }} <span class="n">{{ printf "%02d" (len .companies) }}</span></button>
+  {{ end }}
 </div>
+
+{{ range $groups }}
+<section class="thesis-block" data-thesis="{{ .tag }}">
+  <div class="thesis-header">
+    <span class="h-name">{{ .name }}</span>
+    <span class="h-meta"><span class="count">{{ printf "%02d" (len .companies) }}</span> · {{ .meta }}</span>
+  </div>
+  {{ with .note }}<p class="thesis-note">{{ . }}</p>{{ end }}
+  <div class="co-list">
+    {{ range .companies }}
+    <a href="{{ .url }}" class="co-row">
+      <span class="co-logo"><img src="{{ .logo | relURL }}" alt="{{ .name }} logo" loading="lazy" /></span>
+      <span class="co-name">{{ .name }}</span>
+      <span class="co-thesis">{{ .thesis }}</span>
+      <span class="co-round">{{ .round }}</span>
+    </a>
+    {{ end }}
+  </div>
+</section>
+{{ end }}
+
+<section id="inbound" style="margin-top: 3.5rem;">
+  <div class="eyebrow">Inbound</div>
+  <h2 class="section-title">Actively writing checks in these three shapes.</h2>
+  <div class="looking-for">
+    <div class="lf-card">
+      <div class="lf-num">01</div>
+      <div class="lf-title">Physical AI with defensible data loops</div>
+      <div class="lf-desc">Robotics, dual-use hardware, and embodied systems that get harder to displace as they collect real-world data.</div>
+    </div>
+    <div class="lf-card">
+      <div class="lf-num">02</div>
+      <div class="lf-title">Neoclouds with real utilization economics</div>
+      <div class="lf-desc">Compute infrastructure priced against actual load. Chips, edge compute, thermal & photonic bets.</div>
+    </div>
+    <div class="lf-card">
+      <div class="lf-num">03</div>
+      <div class="lf-title">Aerospace & vertical AI with a first customer</div>
+      <div class="lf-desc">Dual-use aerospace and vertical software with signed enterprise revenue.</div>
+    </div>
+  </div>
+  <div class="callout" style="margin-top: 1.5rem;">
+    <strong>Pitch inbound</strong>
+    Physical AI, neocloud, AI infra, frontier labs, dual-use aerospace. <a href="mailto:cj@cjsun.co">cj@cjsun.co</a> · <a href="https://www.linkedin.com/in/christopherjamessun/">LinkedIn</a>
+  </div>
+</section>
+
+<script>
+  (function () {
+    var chips = document.querySelectorAll('#filters .chip');
+    var blocks = document.querySelectorAll('.thesis-block');
+    chips.forEach(function (chip) {
+      chip.addEventListener('click', function () {
+        chips.forEach(function (c) { c.classList.remove('active'); });
+        chip.classList.add('active');
+        var f = chip.dataset.filter;
+        blocks.forEach(function (b) {
+          b.style.display = (f === 'all' || b.dataset.thesis === f) ? '' : 'none';
+        });
+      });
+    });
+  })();
+</script>
 {{ end }}
