@@ -940,3 +940,42 @@
 .post-footer a { font-family: var(--mono); font-size: 13px; color: var(--accent); text-decoration: none; }
 .plain-list { list-style: none; padding: 0; }
 .plain-list li { padding: 0.5rem 0; border-bottom: 1px solid var(--border); }
+
+/* Mobile: collapse home investment preview cards into slim rows */
+@media (max-width: 640px) {
+  .portfolio-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+  .portfolio-item {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    aspect-ratio: auto;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid var(--border);
+    border-radius: 0;
+    padding: 0.72rem 0.15rem;
+  }
+  .portfolio-item:hover {
+    background: var(--surface);
+    transform: none;
+    border-color: var(--border);
+  }
+  .portfolio-item .name { font-size: 14px; }
+  .portfolio-item .meta { font-size: 11px; }
+  .portfolio-item .meta .sector { display: none; }
+  .portfolio-item .meta .year {
+    color: var(--text-muted);
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    padding: 0.22rem 0.5rem;
+    white-space: nowrap;
+  }
+  .portfolio-item:hover .meta .year {
+    color: var(--accent);
+    border-color: var(--accent);
+  }
+}
